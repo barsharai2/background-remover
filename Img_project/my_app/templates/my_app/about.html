@@ -1,0 +1,557 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    About - BG Remover
+{% endblock title %}
+
+
+{% block content %}
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="py-5">
+    <div class="container py-lg-4">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-7">
+
+                <span class="badge rounded-pill text-bg-primary px-3 py-2 mb-3">
+                    About the Project
+                </span>
+
+                <h1 class="display-4 fw-bold mb-4">
+                    Making Background Removal
+                    <span class="text-primary">Simple.</span>
+                </h1>
+
+                <p class="lead text-muted">
+                    BG Remover is a web application built to make image
+                    background removal simple and accessible. Instead of
+                    requiring complicated image-editing software, users can
+                    upload an image, process it, preview the result, and
+                    download the background-removed image from one place.
+                </p>
+
+                <a href="{% url 'bgremove' %}"
+                   class="btn btn-primary btn-lg rounded-pill px-4 mt-3">
+
+                    <i class="fa-solid fa-wand-magic-sparkles me-2"></i>
+                    Try Background Remover
+
+                </a>
+
+            </div>
+
+
+            <div class="col-lg-5">
+
+                <div class="card border-0 shadow-sm rounded-4 p-4 text-center">
+
+                    <div class="mb-3">
+                        <i class="fa-solid fa-image fa-5x text-primary"></i>
+                    </div>
+
+                    <h3 class="fw-bold">
+                        From Image to Transparency
+                    </h3>
+
+                    <p class="text-muted mb-0">
+                        Upload an image, let the background removal process
+                        do the work, and download the result as a transparent
+                        PNG.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     WHY I BUILT THIS
+========================= -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9 text-center">
+
+                <span class="text-primary fw-semibold">
+                    WHY I BUILT THIS
+                </span>
+
+                <h2 class="fw-bold mt-2 mb-4">
+                    A Project Built Around a Real Problem
+                </h2>
+
+                <p class="text-muted fs-5">
+                    Removing a background is a common image-editing task,
+                    but doing it manually can take time, especially when
+                    working with multiple images. I wanted to explore how
+                    this process could be simplified through a web
+                    application.
+                </p>
+
+                <p class="text-muted fs-5">
+                    This project combines Django web development with
+                    Python-based image processing to create a simple
+                    workflow: upload an image, remove its background,
+                    compare the result, and download the processed image.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section class="py-5">
+
+    <div class="container py-3">
+
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-semibold">
+                HOW IT WORKS
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                Simple From Start to Finish
+            </h2>
+
+            <p class="text-muted">
+                The application keeps the image-processing workflow simple.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Step 1 -->
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+
+                    <div class="mb-4">
+
+                        <div class="bg-primary text-white rounded-circle
+                                    d-inline-flex align-items-center
+                                    justify-content-center"
+                             style="width: 55px; height: 55px;">
+
+                            <i class="fa-solid fa-upload"></i>
+
+                        </div>
+
+                    </div>
+
+                    <h4 class="fw-bold">
+                        01. Upload
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        Select an image from your device and upload it
+                        through the background remover page.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 2 -->
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+
+                    <div class="mb-4">
+
+                        <div class="bg-primary text-white rounded-circle
+                                    d-inline-flex align-items-center
+                                    justify-content-center"
+                             style="width: 55px; height: 55px;">
+
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        </div>
+
+                    </div>
+
+                    <h4 class="fw-bold">
+                        02. Process
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        The uploaded image is processed using the
+                        background-removal model provided through
+                        <code>rembg</code>.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Step 3 -->
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+
+                    <div class="mb-4">
+
+                        <div class="bg-success text-white rounded-circle
+                                    d-inline-flex align-items-center
+                                    justify-content-center"
+                             style="width: 55px; height: 55px;">
+
+                            <i class="fa-solid fa-download"></i>
+
+                        </div>
+
+                    </div>
+
+                    <h4 class="fw-bold">
+                        03. Download
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        Preview the processed image and download the
+                        background-removed PNG.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TECHNOLOGIES
+========================= -->
+
+<section class="py-5 bg-light">
+
+    <div class="container py-3">
+
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-semibold">
+                TECHNOLOGY
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                Built With Python and Django
+            </h2>
+
+            <p class="text-muted">
+                A combination of web development and image processing
+                technologies powers this project.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- Django -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card border-0 shadow-sm rounded-4 text-center
+                            h-100 p-4">
+
+                    <i class="fa-brands fa-python fa-3x text-primary mb-3"></i>
+
+                    <h5 class="fw-bold">
+                        Python
+                    </h5>
+
+                    <p class="text-muted small mb-0">
+                        Used as the main programming language for the
+                        application's backend and image processing.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Django -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card border-0 shadow-sm rounded-4 text-center
+                            h-100 p-4">
+
+                    <i class="fa-solid fa-server fa-3x text-primary mb-3"></i>
+
+                    <h5 class="fw-bold">
+                        Django
+                    </h5>
+
+                    <p class="text-muted small mb-0">
+                        Handles the web application, URL routing, views,
+                        templates, and file uploads.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- rembg -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card border-0 shadow-sm rounded-4 text-center
+                            h-100 p-4">
+
+                    <i class="fa-solid fa-wand-magic-sparkles fa-3x
+                              text-primary mb-3"></i>
+
+                    <h5 class="fw-bold">
+                        rembg
+                    </h5>
+
+                    <p class="text-muted small mb-0">
+                        Used to process images and generate the
+                        background-removed result.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bootstrap -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card border-0 shadow-sm rounded-4 text-center
+                            h-100 p-4">
+
+                    <i class="fa-brands fa-bootstrap fa-3x text-primary mb-3"></i>
+
+                    <h5 class="fw-bold">
+                        Bootstrap
+                    </h5>
+
+                    <p class="text-muted small mb-0">
+                        Used to create a responsive and clean user
+                        interface.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="py-5">
+
+    <div class="container py-3">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                What the Application Provides
+            </h2>
+
+            <p class="text-muted">
+                The current version focuses on a simple image-processing
+                experience.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+
+                <div class="d-flex gap-3">
+
+                    <div class="text-success fs-4">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <h5 class="fw-bold">
+                            Easy Image Upload
+                        </h5>
+
+                        <p class="text-muted">
+                            Upload supported image formats directly from
+                            the browser.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <div class="d-flex gap-3">
+
+                    <div class="text-success fs-4">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <h5 class="fw-bold">
+                            Automatic Background Removal
+                        </h5>
+
+                        <p class="text-muted">
+                            The image is processed automatically after
+                            submission.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <div class="d-flex gap-3">
+
+                    <div class="text-success fs-4">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <h5 class="fw-bold">
+                            Before & After Preview
+                        </h5>
+
+                        <p class="text-muted">
+                            Compare the uploaded image with the processed
+                            version before downloading it.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <div class="d-flex gap-3">
+
+                    <div class="text-success fs-4">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <h5 class="fw-bold">
+                            Transparent PNG Output
+                        </h5>
+
+                        <p class="text-muted">
+                            The processed result is saved as a PNG so that
+                            the removed background can remain transparent.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECT GOAL
+========================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="card border-0 bg-primary text-white rounded-4 shadow">
+
+            <div class="card-body p-4 p-md-5 text-center">
+
+                <h2 class="fw-bold mb-3">
+                    The Goal Behind BG Remover
+                </h2>
+
+                <p class="lead mb-4">
+
+                    The main goal of this project is to explore how a
+                    real-world image editing task can be turned into a
+                    simple web experience using Django and Python.
+
+                </p>
+
+                <p class="mb-4">
+
+                    It is also a practical project for learning how
+                    frontend interfaces, Django views, file uploads,
+                    media files, Python libraries, and image-processing
+                    workflows work together in one application.
+
+                </p>
+
+                <a href="{% url 'bgremove' %}"
+                   class="btn btn-light btn-lg rounded-pill px-4">
+
+                    Try It Yourself
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock content %}

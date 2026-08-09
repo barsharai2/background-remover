@@ -1,0 +1,581 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+BG Remover - Remove Image Backgrounds
+{% endblock title %}
+
+
+{% block content %}
+
+<!-- =====================================
+     HERO SECTION
+===================================== -->
+
+<section class="py-5">
+
+  <div class="container py-lg-5">
+
+    <div class="row align-items-center g-5">
+
+      <!-- LEFT CONTENT -->
+
+      <div class="col-lg-7">
+
+        <span class="badge rounded-pill text-bg-primary px-3 py-2 mb-3">
+          Python & Django Project
+        </span>
+
+        <h1 class="display-3 fw-bold lh-sm mb-4">
+
+          Remove Image
+          <span class="text-primary">
+            Backgrounds
+          </span>
+          Easily.
+
+        </h1>
+
+        <p class="lead text-muted mb-4">
+
+          Upload an image and let BG Remover process the
+          background automatically. Preview the original
+          and processed images, then download the result
+          as a transparent PNG.
+
+        </p>
+
+
+        <!-- BUTTONS -->
+
+        <div class="d-flex flex-wrap gap-3">
+
+          <a href="{% url 'bgremove' %}" class="btn btn-primary btn-lg rounded-pill px-4">
+
+            <i class="fa-solid fa-wand-magic-sparkles me-2"></i>
+
+            Remove Background
+
+          </a>
+
+
+          <a href="{% url 'about' %}" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+
+            Learn More
+            <i class="fa-solid fa-arrow-right ms-2"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT VISUAL -->
+
+      <div class="col-lg-5">
+
+        <div class="card border-0 shadow rounded-4 overflow-hidden">
+
+          <!-- Checkerboard background -->
+
+          <div class="p-4 text-center" style="
+                            background-image:
+                            linear-gradient(45deg, #eeeeee 25%, transparent 25%),
+                            linear-gradient(-45deg, #eeeeee 25%, transparent 25%),
+                            linear-gradient(45deg, transparent 75%, #eeeeee 75%),
+                            linear-gradient(-45deg, transparent 75%, #eeeeee 75%);
+                            background-size: 30px 30px;
+                            background-position:
+                            0 0,
+                            0 15px,
+                            15px -15px,
+                            -15px 0px;
+                        ">
+
+            <div class="bg-white rounded-4 p-4 shadow-sm">
+
+              <i class="fa-solid fa-image text-primary" style="font-size: 100px;">
+              </i>
+
+              <h4 class="fw-bold mt-4 mb-2">
+                Background Removed
+                <img src="{% static 'images/a.png' %}" alt="Background Removed" class="img-fluid" style="
+            width: 100%;
+            max-width: 350px;
+            height: 250px;
+            object-fit: contain;
+        ">
+              </h4>
+
+              <p class="text-muted mb-0">
+                Transparent PNG output
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     FEATURES
+===================================== -->
+
+<section class="py-5 bg-light">
+
+  <div class="container py-4">
+
+    <div class="text-center mb-5">
+
+      <span class="text-primary fw-semibold">
+        SIMPLE WORKFLOW
+      </span>
+
+      <h2 class="fw-bold mt-2">
+        Everything You Need
+      </h2>
+
+      <p class="text-muted">
+        A straightforward workflow designed to make
+        background removal easier.
+      </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+      <!-- FEATURE 1 -->
+
+      <div class="col-md-4">
+
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+          <div class="card-body p-4">
+
+            <div class="bg-primary bg-opacity-10 text-primary
+                                   rounded-3 d-inline-flex
+                                   align-items-center justify-content-center
+                                   mb-4" style="width: 60px; height: 60px;">
+
+              <i class="fa-solid fa-upload fa-lg"></i>
+
+            </div>
+
+            <h4 class="fw-bold">
+              Easy Upload
+            </h4>
+
+            <p class="text-muted mb-0">
+
+              Select an image from your device and
+              upload it directly through the browser.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FEATURE 2 -->
+
+      <div class="col-md-4">
+
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+          <div class="card-body p-4">
+
+            <div class="bg-primary bg-opacity-10 text-primary
+                                   rounded-3 d-inline-flex
+                                   align-items-center justify-content-center
+                                   mb-4" style="width: 60px; height: 60px;">
+
+              <i class="fa-solid fa-wand-magic-sparkles fa-lg"></i>
+
+            </div>
+
+            <h4 class="fw-bold">
+              Automatic Processing
+            </h4>
+
+            <p class="text-muted mb-0">
+
+              The uploaded image is processed using
+              Python and the <code>rembg</code> library.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FEATURE 3 -->
+
+      <div class="col-md-4">
+
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+          <div class="card-body p-4">
+
+            <div class="bg-success bg-opacity-10 text-success
+                                   rounded-3 d-inline-flex
+                                   align-items-center justify-content-center
+                                   mb-4" style="width: 60px; height: 60px;">
+
+              <i class="fa-solid fa-download fa-lg"></i>
+
+            </div>
+
+            <h4 class="fw-bold">
+              Download Result
+            </h4>
+
+            <p class="text-muted mb-0">
+
+              Preview the processed image and download
+              the result as a transparent PNG.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     HOW IT WORKS
+===================================== -->
+
+<section class="py-5">
+
+  <div class="container py-4">
+
+    <div class="text-center mb-5">
+
+      <span class="text-primary fw-semibold">
+        HOW IT WORKS
+      </span>
+
+      <h2 class="fw-bold mt-2">
+        Three Simple Steps
+      </h2>
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+      <!-- STEP 1 -->
+
+      <div class="col-md-4 text-center">
+
+        <div class="rounded-circle bg-primary text-white
+                           d-inline-flex align-items-center
+                           justify-content-center mb-4" style="width: 75px; height: 75px;">
+
+          <span class="fs-3 fw-bold">
+            1
+          </span>
+
+        </div>
+
+        <h4 class="fw-bold">
+          Upload
+        </h4>
+
+        <p class="text-muted px-lg-4">
+
+          Choose the image you want to process
+          from your device.
+
+        </p>
+
+      </div>
+
+
+      <!-- STEP 2 -->
+
+      <div class="col-md-4 text-center">
+
+        <div class="rounded-circle bg-primary text-white
+                           d-inline-flex align-items-center
+                           justify-content-center mb-4" style="width: 75px; height: 75px;">
+
+          <span class="fs-3 fw-bold">
+            2
+          </span>
+
+        </div>
+
+        <h4 class="fw-bold">
+          Remove
+        </h4>
+
+        <p class="text-muted px-lg-4">
+
+          BG Remover processes the image and
+          removes its background.
+
+        </p>
+
+      </div>
+
+
+      <!-- STEP 3 -->
+
+      <div class="col-md-4 text-center">
+
+        <div class="rounded-circle bg-success text-white
+                           d-inline-flex align-items-center
+                           justify-content-center mb-4" style="width: 75px; height: 75px;">
+
+          <span class="fs-3 fw-bold">
+            3
+          </span>
+
+        </div>
+
+        <h4 class="fw-bold">
+          Download
+        </h4>
+
+        <p class="text-muted px-lg-4">
+
+          Preview your result and download
+          the transparent PNG.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     TECHNOLOGY SECTION
+===================================== -->
+
+<section class="py-5 bg-light">
+
+  <div class="container py-4">
+
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6">
+
+        <span class="text-primary fw-semibold">
+          BUILT WITH
+        </span>
+
+        <h2 class="fw-bold mt-2 mb-4">
+          Python, Django & Image Processing
+        </h2>
+
+        <p class="text-muted">
+
+          This project brings together web development
+          and image processing to create a simple
+          background-removal workflow.
+
+        </p>
+
+        <p class="text-muted">
+
+          Django manages the application and file uploads,
+          while Python libraries handle image processing
+          and background removal.
+
+        </p>
+
+        <a href="{% url 'about' %}" class="btn btn-outline-primary rounded-pill px-4 mt-2">
+          Explore the Project
+        </a>
+
+      </div>
+
+
+      <div class="col-lg-6">
+
+        <div class="row g-3">
+
+
+          <div class="col-6">
+
+            <div class="card border-0 shadow-sm rounded-4
+                                    text-center p-4 h-100">
+
+              <i class="fa-brands fa-python fa-3x
+                                      text-primary mb-3">
+              </i>
+
+              <h5 class="fw-bold">
+                Python
+              </h5>
+
+              <p class="small text-muted mb-0">
+                Backend & image processing
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-6">
+
+            <div class="card border-0 shadow-sm rounded-4
+                                    text-center p-4 h-100">
+
+              <i class="fa-solid fa-server fa-3x
+                                      text-primary mb-3">
+              </i>
+
+              <h5 class="fw-bold">
+                Django
+              </h5>
+
+              <p class="small text-muted mb-0">
+                Web application backend
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-6">
+
+            <div class="card border-0 shadow-sm rounded-4
+                                    text-center p-4 h-100">
+
+              <i class="fa-solid fa-wand-magic-sparkles fa-3x
+                                      text-primary mb-3">
+              </i>
+
+              <h5 class="fw-bold">
+                rembg
+              </h5>
+
+              <p class="small text-muted mb-0">
+                Background removal
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-6">
+
+            <div class="card border-0 shadow-sm rounded-4
+                                    text-center p-4 h-100">
+
+              <i class="fa-brands fa-bootstrap fa-3x
+                                      text-primary mb-3">
+              </i>
+
+              <h5 class="fw-bold">
+                Bootstrap
+              </h5>
+
+              <p class="small text-muted mb-0">
+                Responsive interface
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     CTA SECTION
+===================================== -->
+
+<section class="py-5">
+
+  <div class="container py-4">
+
+    <div class="card border-0 bg-primary text-white
+                    rounded-4 shadow">
+
+      <div class="card-body text-center p-5">
+
+        <div class="mb-3">
+
+          <i class="fa-solid fa-scissors fa-3x"></i>
+
+        </div>
+
+        <h2 class="fw-bold mb-3">
+          Ready to Remove a Background?
+        </h2>
+
+        <p class="lead mb-4">
+
+          Upload an image and try the background
+          removal tool.
+
+        </p>
+
+        <a href="{% url 'bgremove' %}" class="btn btn-light btn-lg rounded-pill px-5">
+
+          Start Removing
+
+          <i class="fa-solid fa-arrow-right ms-2"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+{% endblock content %}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}
+
+        {% endblock title %}</title>
+    <!-- bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .active {
+            color: green !important;
+            border-bottom: 3px solid #025219;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar start -->
+
+    <nav class="navbar navbar-expand-lg custom-navbar">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                BG <span>Remover</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' %}
+                          active
+                        {% endif %}" href="{% url 'home' %}">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/bgremove/' %}
+                          active
+                        {% endif %}" href="{% url 'bgremove' %}">Remove Background</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/gallery/' %}
+                          active
+                        {% endif %}" href="{% url 'gallery' %}">Gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if  request.path == '/about/' %}
+                          active
+                        {% endif %}" href="{% url 'about' %}">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/contact/' %}
+                          active
+                        {% endif %}" href="{% url 'contact' %}">Contact</a>
+                    </li>
+
+                </ul>
+
+                <a href="#" class="login-btn">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="container mt-5 pt-5">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- navbar end -->
+
+
+
+
+    {% block content %}
+
+    {% endblock content %}
+    <!-- footer start -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-container">
+
+                <!-- Logo -->
+                <div class="footer-box">
+
+                    <h2 class="footer-logo">
+                        BG <span>Remover</span>
+                    </h2>
+
+                    <p>
+                        Remove image backgrounds instantly with AI.
+                        Fast, accurate, and free to use. Create
+                        professional transparent images in seconds.
+                    </p>
+
+                    <div class="social-icons">
+
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                        <a href="#"><i class="fab fa-github"></i></a>
+
+                    </div>
+
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-box">
+
+                    <h4>Quick Links</h4>
+
+                    <ul>
+
+                        <li><a href="#">Home</a></li>
+
+                        <li><a href="#">Remove Background</a></li>
+
+                        <li><a href="#">Gallery</a></li>
+
+                        <li><a href="#">About</a></li>
+
+                        <li><a href="#">Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Services -->
+                <div class="footer-box">
+
+                    <h4>Services</h4>
+
+                    <ul>
+
+                        <li><a href="#">AI Background Removal</a></li>
+
+                        <li><a href="#">Transparent PNG</a></li>
+
+                        <li><a href="#">Photo Enhancement</a></li>
+
+                        <li><a href="#">Image Editing</a></li>
+
+                        <li><a href="#">Bulk Processing</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-box">
+
+                    <h4>Contact Us</h4>
+
+                    <p>
+                        <i class="fas fa-location-dot"></i>
+                        Kathmandu, Nepal
+                    </p>
+
+                    <p>
+                        <i class="fas fa-phone"></i>
+                        +977 9800000000
+                    </p>
+
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        support@bgremover.com
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="footer-bottom">
+
+                © 2026 BG Remover. All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- footer end  -->
+
+    <!-- bootstrap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
